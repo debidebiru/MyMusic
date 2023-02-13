@@ -1,0 +1,74 @@
+<!--pages/home/home.wxml-->
+<!-- 轮播图 -->
+<swiper indicator-dots circular autoplay>
+  <swiper-item>
+    <image src="../../utils/swiper/2.jpg" mode="" />
+  </swiper-item>
+  <swiper-item>
+    <image src="../../utils/swiper/1.jpg" mode="" />
+  </swiper-item>
+</swiper>
+<!-- 图标导航 -->
+<view class="navContainer">
+  <view class="navitem">
+    <text class="iconfont icon-tuijian"></text>
+    <text class="navitem-text">每日推荐</text>
+  </view>
+  <view class="navitem">
+    <text class="iconfont icon-gedan"></text>
+    <text class="navitem-text">歌单</text>
+  </view>
+  <view class="navitem">
+    <text class="iconfont icon-paihangbang"></text>
+    <text class="navitem-text">排行榜</text>
+  </view>
+  <view class="navitem">
+    <text class="iconfont icon-diantai"></text>
+    <text class="navitem-text">电台</text>
+  </view>
+</view>
+<!-- 热门歌手 -->
+<view class="host">
+<NavHeader title="热门歌手" nav="为您精心推荐"></NavHeader>
+<view class="hotlist">
+  <block wx:for="{{singer}}" wx:key="this">
+    <view class="item">
+      <image wx:if="item.picUrl.length>0" src="{{item.picUrl}}"></image>
+      <text>{{item.name}}</text>
+    </view>
+  </block>
+</view>
+</view>
+<!-- 排行榜 -->
+<view class="topList">
+  <NavHeader title='排行榜' nav='热歌风向标'></NavHeader> 
+  <swiper class="topListSwiper" next-margin="50rpx">
+    <swiper-item wx:for="{{topList}}" wx:key="name">
+    <view class="swiperItem">
+      <view class="title">{{item.name}}</view>
+      <view class="musicItem" wx:for="{{item.tracks}}" wx:key="id" wx:for-item="musicItem">
+        <image src="{{musicItem.al.picUrl}}"></image>
+        <text class="count">{{index+1}}</text>
+        <text class="musicName">{{musicItem.name}}</text>
+      </view>
+    </view>
+    </swiper-item>
+  </swiper>
+</view>
+<!-- 最新音乐 -->
+<view class="music">
+  <NavHeader title='最新音乐' nav='最新最热'></NavHeader> 
+<view class="musicbox">
+<block wx:for="{{newMusic}}" wx:key="this">
+  <view class="item">
+    <view class="txtbox">
+      <text class="mname">{{item.name}}</text>
+      <text class="name">{{item.song.artists[0].name}}</text>
+    </view>
+    <view class="playimg"> 
+    <image src="../../utils/icon/play.png"></image>
+    </view>
+  </view>
+</block>
+</view>
+</view>

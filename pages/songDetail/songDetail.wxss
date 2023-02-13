@@ -1,0 +1,65 @@
+/* pages/songDetail/songDetail.wxss */
+page{
+  height: 100%;
+}
+.songDeatailContainer{
+  /* height: 1280rpx; */
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center ;
+}
+.discContainer{
+  position: relative;
+  top: 55rpx;
+  width: 598rpx;
+  height: 598rpx;
+  margin-top: 110rpx;
+}
+.disc{
+  height: 100%;
+  width: 100%;
+}
+.musicImg{
+  position: absolute;
+  top: -12rpx;
+  right: 0;
+  bottom: 0;
+  left: -12rpx;
+  margin: auto;
+  width: 370rpx;
+  height: 370rpx;
+  border-radius: 50%;
+}
+.discAnimation{
+  animation: disc 4s linear infinite
+}
+@keyframes disc{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+/* 底部区域 */
+.musicControl{
+  position: absolute;
+  width: 100%;
+  display: flex;
+  bottom: 40rpx;
+  left: 0;
+  border-top: 1px solid #fff;
+}
+.musicControl text{
+  width: 20%;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 50rpx
+}
+.musicControl text.big{
+  font-size: 85rpx;
+}

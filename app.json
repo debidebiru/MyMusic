@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/recommendSong/recommendSong",
+    "pages/songDetail/songDetail",
+    "pages/mine/mine",
+    "pages/login/login",
+    "pages/home/home",
+    "pages/favorite/favorite"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#492D22",
+    "navigationBarTitleText": "中国民歌民乐平台",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#D8C7B5"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "utils/icon/home.png",
+        "selectedIconPath": "utils/icon/home-fill.png"
+      },
+      {
+        "pagePath": "pages/favorite/favorite",
+        "text": "我的收藏",
+        "iconPath": "utils/icon/icon-test.png",
+        "selectedIconPath": "utils/icon/icon-test_1.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "utils/icon/account.png",
+        "selectedIconPath": "utils/icon/account-fill.png"
+      }
+    ],
+    "backgroundColor": "#D8C7B5",
+    "selectedColor": "#492D22"
+  },
+  "sitemapLocation": "sitemap.json",
+  "requiredBackgroundModes": ["audio"]
+}

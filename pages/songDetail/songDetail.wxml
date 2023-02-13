@@ -1,0 +1,21 @@
+<!--pages/songDetail/songDetail.wxml-->
+<view class="songDeatailContainer">
+  <view class="author">{{song.ar[0].name}}</view>
+  <view class="discContainer ">
+  <image class="disc" src="/images/songDetail/1.png"></image>
+  <image class="musicImg {{isPlay && 'discAnimation'}}" src="{{song.al.picUrl}}"></image>
+  </view>
+
+  <!-- 底部播放区域 -->
+  <view class="musicControl">
+    <text class="iconfont icon-suijibofang"></text>
+
+    <text class="iconfont icon-shangyishoushangyige" id="pre" bindtap="handleSwitch"></text>
+
+    <text class="iconfont {{isPlay?'icon-zanting':'icon-bofang'}} big" bindtap="handleMusicPlay"></text>
+
+    <text class="iconfont icon-xiayigexiayishou" id="next" bindtap="handleSwitch"></text>
+
+    <text class="iconfont icon-24gf-playlistMusic3"></text>
+  </view>
+</view>
