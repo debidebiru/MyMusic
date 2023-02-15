@@ -10,7 +10,7 @@
 </swiper>
 <!-- 图标导航 -->
 <view class="navContainer">
-  <view class="navitem">
+  <view class="navitem" bindtap="toRecommendSong">
     <text class="iconfont icon-tuijian"></text>
     <text class="navitem-text">每日推荐</text>
   </view>
