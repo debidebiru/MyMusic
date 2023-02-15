@@ -1,4 +1,4 @@
-// pages/songDetail/songDetail.js
+import PubSub from 'pubsub-js'
 import request from '../../utils/request'
 // 为了操作全局音乐播放状态  获取全局实例
 const appInstance =getApp();
@@ -98,9 +98,25 @@ Page({
   },
 
   // 点击切歌
-  // handleSwitch(event){
-  //   let type=event.currentTarget.id
-  // }
+  handleSwitch(event){
+    let type=event.currentTarget.id
+    //关闭当前播放的音乐 
+    this.backgroundAudioManager.stop()
+
+    // 订阅来自recommendsong页面发布的musicId
+    PubSub.subscribe('musicId',(msg,musicId)=>{
+      console.log(musicId);
+
+      // 获取音乐详情
+      this.getSongInfo(musicId)
+      // 切歌自动播放
+      this.musicControl(true,musicId)
+      // 取消订阅  解决多次触发订阅事件
+      PubSub.unsubscribe('musicId')
+    })
+    // 发布消息给recommendsong页面
+    PubSub.publish('switchType',type)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

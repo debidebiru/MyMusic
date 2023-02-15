@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/recommendSong/recommendSong",
-    "pages/songDetail/songDetail",
     "pages/mine/mine",
+    "pages/songDetail/songDetail",
     "pages/login/login",
     "pages/home/home",
     "pages/favorite/favorite"
