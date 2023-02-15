@@ -24,7 +24,7 @@
       },
       {
         "pagePath": "pages/favorite/favorite",
-        "text": "我的收藏",
+        "text": "我的喜欢",
         "iconPath": "utils/icon/icon-test.png",
         "selectedIconPath": "utils/icon/icon-test_1.png"
       },

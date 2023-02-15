@@ -1,2 +1,27 @@
-<!--pages/favorite/favorite.wxml-->
-<text>pages/favorite/favorite.wxml</text>
+<!--pages/recommendSong/recommendSong.wxml-->
+<!-- 我的喜欢 -->
+<view class="recommendSongContainer">
+  <!-- 头部 -->
+  <view class="header">
+    <image src="../../images/favorite/1.jpg"></image>
+  </view>
+
+  <!-- 列表区域 -->
+  <view class="ListContainer">
+    <view class="listHeader">
+      <text>播放全部</text>
+      <text class="changeMore">多选</text>
+    </view>
+  </view>
+  <!-- 内容区 -->
+  <scroll-view scroll-y class="listScroll">
+    <view class="scrollItem" wx:for="{{likeSongsList}}" wx:key="id"  bindtap="toSongDetail" data-index="{{index}}" data-song="{{item}}">
+      <image src="{{item.al.picUrl}}"></image>
+      <view class="musicInfo">
+        <text class="musicName">{{item.name}}</text>
+        <text class="author">{{item.ar[0].name}}</text>
+      </view>
+      <text class="iconfont icon-androidgengduo"></text>
+    </view>
+  </scroll-view>
+</view>
