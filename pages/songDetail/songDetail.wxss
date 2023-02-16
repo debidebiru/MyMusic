@@ -98,3 +98,6 @@ page{
   border-radius: 50%;
   background: white;
 }
+.musicControl .icon-xihuan1{
+  color: red;
+}

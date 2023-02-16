@@ -24,7 +24,7 @@
 
   <!-- 底部播放区域 -->
   <view class="musicControl">
-    <text class="iconfont icon-suijibofang"></text>
+    <text class="iconfont {{isLike?'icon-xihuan1':'icon-xihuan'}}" bindtap="handleLike"></text>
 
     <text class="iconfont icon-shangyishoushangyige" id="pre" bindtap="handleSwitch"></text>
 

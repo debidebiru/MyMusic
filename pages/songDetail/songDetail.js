@@ -10,12 +10,14 @@ Page({
    */
   data: {
     isPlay:false,    //播放状态
+    isLike:true, //喜欢状态
     song:{},        //歌曲详情对象
     musicId:'',   //音乐id
     musicLink:'', //音乐链接
     currentTime:'00:00',//当前时长
     durationTime:'00:00',//总时长
     cutrrentWidth:0,  //实时进度条宽度
+    likeSongsId:[],  //喜欢歌曲的id数组
   },
 
   /**
@@ -29,6 +31,8 @@ Page({
       musicId
     })
     this.getSongInfo(musicId)
+    // 获取喜欢状态
+    this.getLikeStatus()
     // 判断当前音乐是否在播放
     if(appInstance.globalData.isMusicPlay && appInstance.globalData.musicId===musicId){
       // 修改当前页面的音乐播放状态为true
@@ -160,6 +164,35 @@ Page({
     })
     // 发布消息给recommendsong页面
     PubSub.publish('switchType',type)
+  },
+  // 检查喜欢状态
+  async getLikeStatus(){
+    // 获取喜欢音乐的id数组
+    let userInfo = wx.getStorageSync('userInfo')
+    let likeSongsId=await request('/likelist',{uid:userInfo.userId})
+    this.setData({
+      likeSongsIdList:likeSongsId.ids
+    })
+    // 如果当前音乐id存在与喜欢列表里则为喜欢状态
+    let ids =this.data.likeSongsIdList.toString()
+    let musicId=this.data.musicId
+    let flag = ids.includes(musicId)
+    this.setData({
+      isLike:flag
+    })
+  },
+  // 切换喜欢状态
+  async handleLike(){
+    let musicId=this.data.musicId
+    let isLike=this.data.isLike
+    let likeSwitch=!(isLike)
+    let likeData=await request('/like',{id:musicId,like:likeSwitch})
+      if(likeData.code===200){
+        this.setData({
+          isLike:likeSwitch
+        })
+      }
+    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
