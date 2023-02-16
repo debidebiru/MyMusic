@@ -58,7 +58,7 @@
 <!-- 最新音乐 -->
 <view class="music">
   <NavHeader title='最新音乐' nav='最新最热'></NavHeader> 
-<view class="musicbox">
+<!-- <view class="musicbox">
 <block wx:for="{{newMusic}}" wx:key="this">
   <view class="item">
     <view class="txtbox">
@@ -70,5 +70,15 @@
     </view>
   </view>
 </block>
-</view>
+</view> -->
+<scroll-view scroll-y class="listScroll">
+    <view class="scrollItem" wx:for="{{newMusic}}" wx:key="id"  bindtap="toSongDetail" data-index="{{index}}" data-song="{{item}}">
+      <image src="{{item.picUrl}}"></image>
+      <view class="musicInfo">
+        <text class="musicName">{{item.name}}</text>
+        <text class="author">{{item.song.artists[0].name}}</text>
+      </view>
+      <text class="iconfont icon-androidgengduo"></text>
+    </view>
+  </scroll-view>
 </view>

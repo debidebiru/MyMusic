@@ -105,7 +105,7 @@ swiper image{
   text-overflow: ellipsis;
 }
 /* 最新音乐 */
-.music{
+/* .music{
   padding: 20rpx;
 }
 .musicbox .item{
@@ -141,4 +141,44 @@ swiper image{
 .item .txtbox .name{
   font-size: 25rpx;
   color: #777;
+} */
+/* 最新音乐-2 */
+.listScroll{
+  padding: 0 20rpx 0 ;
+  height: calc(100vh - 430rpx);
+}
+.scrollItem{
+  display: flex;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+.scrollItem image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 8rpx;
+}
+.musicInfo{
+  display: flex;
+  flex-direction: column;
+  max-width: 400rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 20rpx;
+}
+.musicInfo text{
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx ;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.scrollItem .iconfont{
+  position: absolute;
+  right: 20rpx;
+  height: 80rpx;
+  width: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
 }
