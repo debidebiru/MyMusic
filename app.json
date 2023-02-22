@@ -1,6 +1,8 @@
 {
   "pages": [
+    "pages/video/video",
     "pages/mine/mine",
+    "pages/search/search",
     "pages/recommendSong/recommendSong",
     "pages/songDetail/songDetail",
     "pages/login/login",
@@ -39,5 +41,7 @@
     "selectedColor": "#492D22"
   },
   "sitemapLocation": "sitemap.json",
-  "requiredBackgroundModes": ["audio"]
+  "requiredBackgroundModes": [
+    "audio"
+  ]
 }
